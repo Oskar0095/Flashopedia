@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Flashopedia.ViewModels"
+             x:Class="Flashopedia.Views.FlashCardsMainPage"
+             BackgroundColor="{StaticResource Background}">
+    <ContentPage.BindingContext>
+        <viewmodels:FlashCardsViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Flash Cards"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="30"
+                   TextColor="White" />
+            <CollectionView ItemsSource="{Binding FlashCardsPacks}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                         Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ScrollView>
+                            <Grid Padding="5,5">
+                                <BoxView CornerRadius="20" HeightRequest="100" Style="{StaticResource BoxYellowPinkGradient}">
+                                </BoxView>
+                                <Label Text="{Binding Title}"
+                                       HorizontalOptions="Start"
+                                       TextColor="#f0f0f0"
+                                       Padding="20,10,0,0"
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Start"/>
+                                    <Label Text="Memorized: 5/15"
+                                       HorizontalOptions="Start"
+                                       Padding="10,40,0,0"
+                                       FontAttributes="Bold"
+                                       TextColor="White"
+                                       FontSize="Small"
+                                       VerticalOptions="Start"/>
+                            </Grid>
+                        </ScrollView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Style="{StaticResource NormalButton}"
+                    Text="Add New Flash Cards"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Command="{Binding CreateNewFlashCardsCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

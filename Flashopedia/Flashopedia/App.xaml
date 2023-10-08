@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Flashopedia.App">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Background">#121212</Color>
+            <Style x:Key="NormalButton" TargetType="Button">
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+                <Setter Property="Grid.Background">
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#ba6702"
+                                      Offset="0.1"/>
+                        <GradientStop Color="#fb5574"
+                                      Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+            <Style x:Key="BoxYellowPinkGradient" TargetType="BoxView">
+                <Setter Property="Grid.Background">
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#f89b29"
+                      Offset="0.1"/>
+                        <GradientStop Color="#ff0f7b"
+                      Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+            <Style x:Key="BoxPinkBlueGradient" TargetType="BoxView">
+                <Setter Property="Grid.Background">
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#fc4778"
+          Offset="0.1"/>
+                        <GradientStop Color="#3952f5"
+          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+            <Style x:Key="BoxVioletMagentaGradient" TargetType="BoxView">
+                <Setter Property="Grid.Background">
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#663177"
+          Offset="0.1"/>
+                        <GradientStop Color="#c63f7b"
+          Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>
